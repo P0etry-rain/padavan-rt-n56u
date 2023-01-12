@@ -101,16 +101,16 @@ sudo yum install ncurses-* flex byacc bison zlib-* gmp-* mpfr-* gettext \
 * 克隆源码
 
 ```shell
-git clone --depth=1 https://github.com/chongshengB/rt-n56u.git /opt/rt-n56u
+git clone --depth=1 https://github.com/chongshengB/rt-n56u.git ~/opt/rt-n56u
 ```
 
 * 准备工具链
 
 ```shell
-cd /opt/rt-n56u/toolchain-mipsel
+cd ~/opt/rt-n56u/toolchain-mipsel
 
 # （推荐）使用脚本下载预编译的工具链：
-sh dl_toolchain.sh
+sh ~/opt/rt-n56u/toolchain-mipseldl_toolchain.sh
 
 # 或者，也可以从源码编译工具链，这需要一些时间：
 ./clean_toolchain
@@ -127,7 +127,7 @@ nano /opt/rt-n56u/trunk/configs/templates/PSG1218.config
 * 清理代码树并开始编译
 
 ```shell
-cd /opt/rt-n56u/trunk
+cd ~/opt/rt-n56u/trunk
 ./clear_tree
 fakeroot ./build_firmware_modify PSG1218
 # 脚本第一个参数为路由型号，在trunk/configs/templates/中
